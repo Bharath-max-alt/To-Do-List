@@ -1,0 +1,475 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9a60b5f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Ensures elements stack vertically */
+    overflow-x: hidden;
+    position: relative; /* For positioning the floating button */
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all content horizontally */
+    justify-content: center;
+    height: 100vh; /* Full height of the screen */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styling for the image */
+.welcome-image {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    margin-bottom: 20px; /* Adds space between the image and the welcome text */
+}
+
+.welcome-text {
+    font-family: 'cursive','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.get-started {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #ff6ec7, #ff7eb3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.get-started:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.1);
+}
+
+
+/* Username Input Page Styles */
+.input-container {
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    display: none; /* Hidden initially */
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input:hover {
+    border-color: #ff6ec7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+}
+
+/* Submit Button Styles */
+.submit-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #d88e0f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #e14cec;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* To-Do List Page Styles */
+.todo-container {
+    text-align: center;
+    width: 100%; /* Make it span the full width */
+    max-width: 400px;
+    margin: 0 auto; /* Center horizontally */
+    padding-top: 0; /* Remove padding from the top */
+    position: absolute; /* Use absolute positioning */
+    top: 10px; /* Move to the very top with some spacing */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal alignment */
+}
+
+#welcomeTitle {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Adjust margin for spacing */
+}
+
+.search-container input {
+    padding: 10px;
+    width: 75%; /* Increased width to 75% */
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: #4CAF50;
+}
+
+.search-btn {
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+.search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.search-btn:hover {
+    background-color: #4CAF50;
+    transform: scale(1.1);
+}
+
+/* Floating Button Styles */
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Add List Input Box */
+.add-list-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Initially hidden */
+    text-align: center;
+}
+
+.add-list-container input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.add-list-container input:focus {
+    border-color: #4CAF50;
+}
+
+.add-list-btn {
+    padding: 10px 20px;
+    background-color: #a86833;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-list-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Buttons container styling */
+.buttons-container {
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+}
+
+/* Individual button styling */
+.icon-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+
+
+/* Add List Input */
+.add-list-container {
+    position: fixed;
+    bottom: 60px;
+    width: 100%;
+    display: none;
+    padding: 20px;
+    background: #e5ca6700;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-list-btn {
+    margin-left: 10px;
+    background-color: #45a049;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-list-btn:hover {
+    background-color: #45a049;
+}
+
+/* Floating Add Button */
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6ec7;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+    background-color: #ff4d4d;
+}
+
+#todoList {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e5ca67;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Prevent the list from being too wide */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+}
+
+.todo-item {
+    display: flex;
+    position: relative; /* For checkbox positioning */
+    align-items: center; /* Center single-line text vertically */
+    justify-content: flex-start; /* Start items from the left */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%; /* Full width */
+    min-height: 50px; /* Minimum height for single-line items */
+    word-wrap: break-word; /* Wrap long text */
+    word-break: break-word; /* Break long words */
+    height: auto; /* Adjust height dynamically based on content */
+    max-width: 100%; /* Prevent overflow on larger screens */
+}
+
+.todo-checkbox {
+    position: absolute;
+    left: 10px; /* Position checkbox to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.item-container {
+    margin-left: 40px; /* Offset text to accommodate checkbox */
+    text-align: center; /* Center-align text */
+    flex: 1; /* Fill the remaining space */
+    display: flex;
+    align-items: center; /* Center single-line text vertically */
+    justify-content: center; /* Center text horizontally */
+    flex-wrap: wrap; /* Wrap text to the next line if necessary */
+    height: auto; /* Adjust height based on content */
+    min-height: 50px; /* Ensure consistent minimum height */
+}
+
+.strikethrough span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 600px) {
+    #todoList {
+        padding: 5px; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Full width for mobile */
+    }
+
+    .todo-item {
+        min-height: 70px; /* Adjust minimum height for better readability */
+    }
+
+    .item-container {
+        margin-left: 40px; /* Maintain space for the checkbox */
+        width: calc(100% - 40px); /* Adjust width accordingly */
+    }
+}
+
+
+.menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.menu-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.menu-options button:hover {
+    background-color: #999797;
+}
+
+
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-theme .menu-options {
+    background-color: #333;
+    color: white;
+}
+
+.dark-theme .menu-options button:hover {
+    background-color: #444;
+}
+
+/* To-Do Items in Dark Theme */
+.dark-theme .todo-item span {
+    color: black; /* To-do item text in black for dark theme */
+}
+
+/* Title Styling */
+#title {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.dark-theme #title {
+    color: rgb(11, 222, 215); /* Title text in white for dark theme */
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#menuOptions {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+#menuOptions button {
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+}

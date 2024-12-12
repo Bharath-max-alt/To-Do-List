@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List App</title>
+    <link rel="icon" type="image/x-icon" href="to do icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+   <!-- Welcome Page Content -->
+<div class="welcome-container" id="welcomePage">
+    <!-- Image added above the welcome text -->
+    <img src="to do icon.png" alt="To-Do List Icon" class="welcome-image">
+    <h1 class="welcome-text">Welcome to the To-Do List App</h1>
+    <button class="get-started" onclick="showUsernamePage()">Get Started</button>
+</div>
+
+
+    <!-- Username Input Page Content -->
+    <div class="input-container" id="inputPage">
+        <h1>Enter Your Username</h1>
+        <input type="text" id="username" placeholder="Your username" oninput="saveUsername()" />
+        <button class="submit-btn" onclick="submitUsername()">Submit</button>
+    </div>
+
+    <!-- To-Do List Page (Initially Hidden) -->
+
+    <button id="menuButton" class="menu-btn">
+        <img height="25px" src="https://img.icons8.com/ios-filled/50/menu-2.png" alt="Menu">
+    </button>
+    <div id="menuOptions" class="menu-options">
+        <button id="changeUsername">Change Username</button>
+        <button id="createNewTodo">Create New To-Do</button>
+        <button id="sortByName">Sort by Name</button>
+        <button id="sortByLength">Sort by Length</button>
+        <button id="changeTheme">Change Theme</button>
+    </div>
+    
+    <div class="todo-container" id="todoPage" style="display: none;">
+        <h1 id="welcomeTitle">Welcome [username]</h1>
+        <h2>To-Do List</h2>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search To-Do List..." />
+            <button class="search-btn" onclick="searchItem()">
+                <img src="search icon.png" alt="Search" width="20" height="20"/>
+            </button>
+        </div>
+        <div class="todo-list" id="todoList">
+            <!-- To-Do items will appear here -->
+        </div>
+    </div>
+
+    <!-- Floating Add Button -->
+    <button class="add-btn">+</button>
+
+    <!-- Add List Input -->
+    <div class="add-list-container" style="display: none;">
+        <input type="text" placeholder="Add a list" id="addInput" />
+        <button class="add-list-btn" onclick="addItem()">Add</button>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
