@@ -239,17 +239,23 @@ function addItem() {
 // Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Select the menu button and menu options container
-    const menuButton = document.getElementById('menuButton');
-    const menuOptions = document.getElementById('menuOptions');
+   const menuButton = document.getElementById('menuButton');
+const menuOptions = document.getElementById('menuOptions');
 
-    // Toggle menu visibility
-    if (menuButton && menuOptions) {
-        menuButton.addEventListener('click', () => {
-            menuOptions.style.display = menuOptions.style.display === 'block' ? 'none' : 'block';
-        });
-    } else {
-        console.error("Menu button or menu options element is missing in the DOM.");
-    }
+// Use both click and touchstart for compatibility
+menuButton.addEventListener('click', toggleMenu);
+menuButton.addEventListener('touchstart', toggleMenu);
+
+function toggleMenu(event) {
+    event.preventDefault(); // Prevent unexpected behaviors
+    menuOptions.style.display = menuOptions.style.display === 'block' ? 'none' : 'block';
+}
+
+    
+    menuButton.addEventListener('pointerdown', () => {
+        menuOptions.style.display = menuOptions.style.display === 'none' ? 'block' : 'none';
+    });
+    
 
     // Handle "Change Username" button
     const changeUsernameBtn = document.getElementById('changeUsername');
