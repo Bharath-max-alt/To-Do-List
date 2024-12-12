@@ -473,3 +473,21 @@ h2 {
     margin: 5px 0;
     width: 100%;
 }
+
+
+@media (max-width: 768px) {
+    #menuOptions {
+        width: 90%; /* Adjust size for mobile */
+        right: 5%;  /* Center on smaller screens */
+        display: none; /* Hidden by default */
+    }
+
+    #menuButton {
+        z-index: 1001; /* Ensure it stays above other elements */
+    }
+}
+
+#menuButton {
+    z-index: 1000;
+}
+
